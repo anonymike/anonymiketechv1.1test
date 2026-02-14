@@ -115,47 +115,68 @@ export default function Index() {
       {showLoader && <IntroLoader onComplete={handleLoaderComplete} />}
 
       {/* Main Website Content */}
-      <div className="min-h-screen bg-hacker-bg text-hacker-green relative overflow-hidden">
+      <div className="bg-hacker-bg text-hacker-green relative overflow-hidden">
         {/* Mobile Menu */}
         <MobileMenu showAfterIntro={showContent} />
         <BackToTop />
 
-        {/* Matrix Rain Background */}
-        <MatrixRain />
+        {/* Hero Section with Background Image */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url(/hero-bg.jpg)",
+              opacity: 0.4,
+            }}
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-hacker-bg/80 via-hacker-bg/60 to-hacker-bg/80" />
+
+          {/* Matrix Rain Background */}
+          <div className="absolute inset-0">
+            <MatrixRain />
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 w-full">
+            {/* Header */}
+            <motion.header
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : -50 }}
+              transition={{ duration: 1 }}
+              className="container mx-auto px-4 py-8"
+            >
+              <div className="text-center">
+                <motion.h1
+                  className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-tech font-bold glow-text mb-4"
+                  animate={{
+                    textShadow: [
+                      "0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00",
+                      "0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00",
+                      "0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00",
+                    ],
+                  }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                >
+                  ANONYMIKETECH
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: showContent ? 1 : 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="text-lg sm:text-xl md:text-2xl text-hacker-green-bright mb-8 animate-flicker px-4"
+                >
+                  // Unleashing Digital Innovation & Cyber Excellence
+                </motion.p>
+              </div>
+            </motion.header>
+          </div>
+        </section>
 
         {/* Main Content */}
         <div className="relative z-10">
-          {/* Header */}
-          <motion.header
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : -50 }}
-            transition={{ duration: 1 }}
-            className="container mx-auto px-4 py-8"
-          >
-            <div className="text-center">
-              <motion.h1
-                className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-tech font-bold glow-text mb-4"
-                animate={{
-                  textShadow: [
-                    "0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00",
-                    "0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00",
-                    "0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00",
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              >
-                ANONYMIKETECH
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: showContent ? 1 : 0 }}
-                transition={{ delay: 1.5 }}
-                className="text-lg sm:text-xl md:text-2xl text-hacker-green-bright mb-8 animate-flicker px-4"
-              >
-                // Unleashing Digital Innovation & Cyber Excellence
-              </motion.p>
-            </div>
-          </motion.header>
 
           {/* Terminal Section */}
           <motion.section
