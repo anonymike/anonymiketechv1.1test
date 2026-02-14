@@ -122,17 +122,19 @@ export default function Index() {
 
         {/* Hero Section with Background Image */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Image */}
+          {/* Background Image with Semi-Transparent Overlay */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url(/hero-bg.jpg)",
-              opacity: 0.4,
+              backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/hero-bg.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           />
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-hacker-bg/80 via-hacker-bg/60 to-hacker-bg/80" />
+          {/* Additional Gradient Overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-hacker-bg/40 via-transparent to-hacker-bg/40" />
 
           {/* Matrix Rain Background */}
           <div className="absolute inset-0">
