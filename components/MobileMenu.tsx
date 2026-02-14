@@ -146,8 +146,9 @@ export default function MobileMenu({ showAfterIntro = true }: MobileMenuProps) {
               alt="ANONYMIKETECH Logo"
               width={32}
               height={32}
-              priority
-              loading="eager"
+              priority={true}
+              quality={100}
+              unoptimized={false}
               className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-110 transition-transform"
             />
             <div>
