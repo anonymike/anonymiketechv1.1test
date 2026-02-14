@@ -82,8 +82,9 @@ export default function DesktopNavbar() {
               alt="ANONYMIKETECH Logo"
               width={40}
               height={40}
-              priority
-              loading="eager"
+              priority={true}
+              quality={100}
+              unoptimized={false}
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform"
             />
             <div className="hidden sm:block">

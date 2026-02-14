@@ -41,11 +41,12 @@ export default function HeroSection() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-hacker-bg/40 via-hacker-bg/60 to-hacker-bg/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-hacker-bg/30 to-transparent"></div>
+        {/* Overlay gradient - reduced opacity to show background image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-hacker-bg/20 via-hacker-bg/40 to-hacker-bg/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-hacker-bg/15 to-transparent"></div>
 
         {/* Animated particles over background */}
         <div className="absolute inset-0 opacity-30">

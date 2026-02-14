@@ -1,16 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
   images: {
     unoptimized: true,
+    remotePatterns: [],
   },
-  swcMinify: true,
   reactStrictMode: true,
+  // Ensure static files are served properly
+  staticPageGenerationTimeout: 0,
 }
 
 export default nextConfig
