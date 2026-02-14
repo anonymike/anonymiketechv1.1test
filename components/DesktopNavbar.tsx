@@ -78,13 +78,11 @@ export default function DesktopNavbar() {
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
             <Image
-              src="/logo.png"
+              src="/icon.svg"
               alt="ANONYMIKETECH Logo"
               width={40}
               height={40}
               priority={true}
-              quality={100}
-              unoptimized={false}
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform"
             />
             <div className="hidden sm:block">
