@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import * as THREE from "three"
 
@@ -16,6 +16,18 @@ function Globe() {
       particlesRef.current.rotation.z += 0.0001
     }
   })
+
+  // Generate particle positions
+  const particlePositions = new Float32Array(800 * 3)
+  for (let i = 0; i < 800; i++) {
+    const radius = 2.5
+    const theta = Math.random() * Math.PI * 2
+    const phi = Math.random() * Math.PI
+
+    particlePositions[i * 3] = radius * Math.sin(phi) * Math.cos(theta)
+    particlePositions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta)
+    particlePositions[i * 3 + 2] = radius * Math.cos(phi)
+  }
 
   return (
     <group ref={globeRef}>
@@ -38,36 +50,6 @@ function Globe() {
           emissive="#003d66"
           emissiveIntensity={0.4}
         />
-      </mesh>
-
-      {/* Glowing particles around globe */}
-      <mesh ref={particlesRef}>
-        <bufferGeometry>
-          {(() => {
-            const particleCount = 800
-            const positions = new Float32Array(particleCount * 3)
-
-            for (let i = 0; i < particleCount * 3; i += 3) {
-              const radius = 2.5
-              const theta = Math.random() * Math.PI * 2
-              const phi = Math.random() * Math.PI
-
-              positions[i] = radius * Math.sin(phi) * Math.cos(theta)
-              positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta)
-              positions[i + 2] = radius * Math.cos(phi)
-            }
-
-            return (
-              <bufferAttribute
-                attach="attributes-position"
-                count={particleCount}
-                array={positions}
-                itemSize={3}
-              />
-            )
-          })()}
-        </bufferGeometry>
-        <pointsMaterial size={0.03} color="#ff00ff" sizeAttenuation={true} />
       </mesh>
 
       {/* Glow effect layer 1 - Magenta */}
@@ -93,6 +75,19 @@ function Globe() {
           opacity={0.08}
         />
       </mesh>
+
+      {/* Glowing particles around globe */}
+      <points ref={particlesRef}>
+        <bufferGeometry>
+          <bufferAttribute
+            attach="attributes-position"
+            count={800}
+            array={particlePositions}
+            itemSize={3}
+          />
+        </bufferGeometry>
+        <pointsMaterial size={0.03} color="#ff00ff" sizeAttenuation={true} />
+      </points>
 
       {/* Orbital ring 1 - Equatorial */}
       <line>
