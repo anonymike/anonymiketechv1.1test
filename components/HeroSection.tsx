@@ -82,22 +82,22 @@ export default function HeroSection() {
       </div>
 
       {/* Main content grid */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 container mx-auto px-4 md:px-6">
+      <div className="relative z-10 w-full h-full flex items-center justify-center pt-20 md:pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 container mx-auto px-4 md:px-6 py-8 md:py-0">
           {/* Left side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="flex flex-col justify-center items-start"
+            className="flex flex-col justify-center items-start order-2 lg:order-1 py-8 md:py-0"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="mb-4"
+              className="mb-4 relative z-20"
             >
-              <span className="inline-block px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-tech">
+              <span className="inline-block px-3 md:px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-tech">
                 // Connected Security
               </span>
             </motion.div>
@@ -106,7 +106,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-tech font-bold glow-text mb-6 text-balance leading-tight"
+              className="text-3xl xs:text-3.5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-tech font-bold mb-6 text-balance leading-tight bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-200 bg-clip-text text-transparent"
             >
               ANONYMIKETECH
             </motion.h1>
@@ -115,7 +115,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-base sm:text-lg md:text-xl text-cyan-300/80 mb-8 font-tech text-balance max-w-md"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-cyan-300/80 mb-6 md:mb-8 font-tech text-balance max-w-md"
             >
               // Unleashing Digital Innovation & Cyber Excellence
             </motion.p>
@@ -124,7 +124,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-sm md:text-base text-gray-400 mb-8 max-w-md leading-relaxed"
+              className="text-xs sm:text-sm md:text-base text-gray-400 mb-6 md:mb-8 max-w-md leading-relaxed"
             >
               Experience cutting-edge technology solutions with global reach and uncompromising security. Connect to our innovation lab and explore the future of digital transformation.
             </motion.p>
@@ -133,15 +133,15 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="flex gap-4 flex-wrap"
+              className="flex gap-3 md:gap-4 flex-wrap"
             >
               <a href="/contact">
-                <button className="px-6 py-3 rounded-lg font-tech font-bold text-hacker-terminal bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 hover:shadow-lg hover:shadow-cyan-500/50 transition-all border-2 border-transparent hover:border-cyan-400">
+                <button className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-tech font-bold text-xs md:text-sm text-hacker-terminal bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 hover:shadow-lg hover:shadow-cyan-500/50 transition-all border-2 border-transparent hover:border-cyan-400">
                   Get Started
                 </button>
               </a>
               <a href="#services">
-                <button className="px-6 py-3 rounded-lg font-tech font-bold text-cyan-400 border-2 border-cyan-400/50 hover:border-cyan-400 hover:bg-cyan-400/5 transition-all">
+                <button className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-tech font-bold text-xs md:text-sm text-cyan-400 border-2 border-cyan-400/50 hover:border-cyan-400 hover:bg-cyan-400/5 transition-all">
                   Explore Services
                 </button>
               </a>
@@ -153,11 +153,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex items-center justify-center h-96 md:h-full min-h-96"
+            className="flex items-center justify-center h-64 xs:h-72 sm:h-80 md:h-full min-h-64 order-1 lg:order-2"
           >
             <Suspense
               fallback={
-                <div className="text-cyan-400 animate-pulse">Loading 3D Globe...</div>
+                <div className="text-cyan-400 animate-pulse text-xs md:text-base">Loading 3D Globe...</div>
               }
             >
               <GlobeAnimation />

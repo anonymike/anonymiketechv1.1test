@@ -9,6 +9,7 @@ import MobileMenu from "@/components/MobileMenu"
 import CookieConsent from "@/components/CookieConsent"
 import ChatbotsPromoBanner from "@/components/ChatbotsPromoBanner"
 import ValentinePopup from "@/components/ValentinePopup"
+import WelcomeModal from "@/components/WelcomeModal"
 import { Toaster } from "@/components/ui/toaster"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -61,6 +62,7 @@ export default function RootLayout({
           <ShoppingCart />
           <CookieConsent />
           <ChatbotsPromoBanner />
+          <WelcomeModal />
           <Toaster />
         </CartProvider>
       </body>

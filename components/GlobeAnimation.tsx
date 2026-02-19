@@ -10,10 +10,10 @@ function Globe() {
 
   useFrame(() => {
     if (globeRef.current) {
-      globeRef.current.rotation.y += 0.0002
+      globeRef.current.rotation.y += 0.0008
     }
     if (particlesRef.current) {
-      particlesRef.current.rotation.z += 0.0001
+      particlesRef.current.rotation.z += 0.0004
     }
   })
 
