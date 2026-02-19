@@ -9,6 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/fiber": "latest",
+    "@react-three/drei": "latest",
+    "three": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "latest",
